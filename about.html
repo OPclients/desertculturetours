@@ -1,0 +1,805 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Morocco Culture Tours</title>
+    <meta name="description" content="Learn about Desert Culture Tours, a local Morocco travel team creating authentic cultural journeys." />
+    <link rel="icon" href="assets/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+  :root {
+    --mct-cream: #f8f1e6;
+    --mct-cream-2: #fffaf2;
+    --mct-sand: #ead8c1;
+    --mct-clay: #c96d2d;
+    --mct-clay-dark: #8e3f12;
+    --mct-brown: #2d1509;
+    --mct-coffee: #4a2410;
+    --mct-muted: #755f4e;
+    --mct-white: #fffdf8;
+    --mct-shadow: 0 24px 70px rgba(45, 21, 9, 0.16);
+    --mct-soft-shadow: 0 16px 42px rgba(45, 21, 9, 0.10);
+    --mct-radius: 26px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    color: var(--mct-brown);
+    background:
+      radial-gradient(circle at 86% 18%, rgba(201, 109, 45, 0.15), transparent 28rem),
+      linear-gradient(180deg, var(--mct-cream-2) 0%, var(--mct-cream) 46%, #fffbf5 100%);
+    font-family: "Poppins", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .28;
+    background-image:
+      linear-gradient(rgba(45,21,9,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,21,9,.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 80%, transparent);
+    z-index: -1;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 12px;
+    background: var(--mct-brown);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 999px;
+    z-index: 1000;
+  }
+
+  .skip-link:focus {
+    left: 12px;
+  }
+
+  .inner-hero {
+    position: relative;
+    min-height: clamp(560px, 78vh, 760px);
+    display: grid;
+    align-items: end;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 120px clamp(20px, 10vw, 180px) 88px;
+  }
+
+  .inner-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    transform: scale(1.03);
+  }
+
+  .inner-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(45,21,9,.76) 0%, rgba(45,21,9,.48) 38%, rgba(45,21,9,.10) 72%),
+      linear-gradient(180deg, rgba(45,21,9,.08) 0%, rgba(45,21,9,.08) 48%, var(--mct-cream) 100%);
+  }
+
+  .about-inner-hero::before {
+    content: "About";
+    position: absolute;
+    left: clamp(18px, 8vw, 120px);
+    top: 22%;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(5.5rem, 17vw, 14rem);
+    font-weight: 800;
+    letter-spacing: -.08em;
+    color: rgba(255,255,255,.12);
+    z-index: -1;
+  }
+
+  .inner-hero-content {
+    position: relative;
+    max-width: 680px;
+    padding-left: clamp(0px, 3vw, 40px);
+  }
+
+  .inner-hero-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 76%;
+    border-radius: 999px;
+    background: linear-gradient(var(--mct-clay), rgba(255,255,255,.3));
+  }
+
+  .eyebrow {
+    margin: 0 0 16px;
+    color: var(--mct-clay);
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+  }
+
+  .inner-hero-content .eyebrow {
+    color: #ffd8b8;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    margin: 0;
+    color: var(--mct-brown);
+    letter-spacing: -.035em;
+  }
+
+  .inner-hero-content h1 {
+    max-width: 620px;
+    color: #fff8ef;
+    font-size: clamp(3.3rem, 7vw, 7.2rem);
+    line-height: .86;
+    text-shadow: 0 14px 42px rgba(0,0,0,.28);
+  }
+
+  .inner-hero-content > p:last-child {
+    max-width: 510px;
+    margin: 24px 0 0;
+    color: rgba(255,248,239,.86);
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.75;
+  }
+
+  .lux-container {
+    width: min(1120px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  .premium-section {
+    padding: clamp(82px, 11vw, 150px) 0;
+    position: relative;
+  }
+
+  .premium-section:nth-of-type(even) {
+    background: rgba(255,253,248,.58);
+  }
+
+  .premium-split {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: clamp(38px, 7vw, 96px);
+    align-items: center;
+  }
+
+  .premium-split.reverse {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  }
+
+  .premium-copy {
+    position: relative;
+    padding: clamp(28px, 4vw, 46px);
+    border-radius: var(--mct-radius);
+  }
+
+  .premium-copy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255,253,248,.68);
+    border: 1px solid rgba(74,36,16,.08);
+    box-shadow: var(--mct-soft-shadow);
+    z-index: -1;
+  }
+
+  .premium-story .premium-copy::before {
+    background: transparent;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  .premium-copy h2,
+  .lux-section-head h2 {
+    font-size: clamp(2.5rem, 4.6vw, 5.2rem);
+    line-height: .9;
+  }
+
+  .premium-copy p {
+    margin: 18px 0 0;
+    color: var(--mct-muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .premium-copy strong {
+    color: var(--mct-coffee);
+  }
+
+  .lux-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--mct-clay), var(--mct-clay-dark));
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 16px 32px rgba(201,109,45,.28);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .lux-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 38px rgba(201,109,45,.34);
+  }
+
+  .lux-button.secondary.light {
+    background: #fff8ef;
+    color: var(--mct-brown);
+  }
+
+  .lux-button.compact {
+    min-height: 42px;
+    padding-inline: 20px;
+  }
+
+  .premium-photo {
+    position: relative;
+    margin: 0;
+    min-height: 420px;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: var(--mct-shadow);
+    transform: rotate(-1deg);
+  }
+
+  .premium-split.reverse .premium-photo {
+    transform: rotate(1deg);
+  }
+
+  .premium-photo::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 24px;
+    pointer-events: none;
+  }
+
+  .premium-photo::before {
+    content: "Morocco â€¢ Culture â€¢ Desert";
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 2;
+    padding: 12px 16px;
+    border-radius: 18px;
+    background: rgba(255,250,242,.9);
+    color: var(--mct-brown);
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    box-shadow: 0 12px 34px rgba(45,21,9,.14);
+  }
+
+  .premium-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+  }
+
+  .premium-photo.wide {
+    min-height: 520px;
+  }
+
+  .lux-section-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 48px;
+  }
+
+  .premium-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .premium-feature-card {
+    position: relative;
+    min-height: 260px;
+    padding: 28px 24px;
+    border-radius: 26px;
+    background: rgba(255,253,248,.82);
+    border: 1px solid rgba(74,36,16,.09);
+    box-shadow: var(--mct-soft-shadow);
+    overflow: hidden;
+    transition: .28s ease;
+  }
+
+  .premium-feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--mct-shadow);
+  }
+
+  .premium-feature-card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    right: -48px;
+    top: -48px;
+    background: rgba(201,109,45,.12);
+  }
+
+  .premium-feature-card img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    padding: 10px;
+    border-radius: 18px;
+    background: #fff5e9;
+    margin-bottom: 28px;
+  }
+
+  .premium-feature-card h3 {
+    font-size: 30px;
+    line-height: .94;
+  }
+
+  .premium-feature-card p {
+    color: var(--mct-muted);
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  .premium-band {
+    position: relative;
+    min-height: 480px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .premium-band > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+  }
+
+  .premium-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(45,21,9,.74), rgba(142,63,18,.54)),
+      radial-gradient(circle at center, rgba(0,0,0,.08), rgba(45,21,9,.55));
+  }
+
+  .premium-band-content {
+    width: min(760px, calc(100% - 40px));
+    color: #fff8ef;
+  }
+
+  .premium-band-content .eyebrow {
+    color: #ffd8b8;
+  }
+
+  .premium-band-content h2 {
+    color: #fff8ef;
+    font-size: clamp(2.8rem, 5vw, 5.4rem);
+    line-height: .9;
+  }
+
+  .premium-band-content p {
+    margin: 18px auto 0;
+    max-width: 520px;
+    color: rgba(255,248,239,.86);
+    line-height: 1.75;
+  }
+
+  .lux-experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .lux-experience-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.7);
+    color: var(--mct-coffee);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 10px 24px rgba(45,21,9,.06);
+  }
+
+  .lux-experience-list span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mct-clay);
+    flex: 0 0 auto;
+  }
+
+  .mct-footer {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(201,109,45,.20), transparent 24rem),
+      #2b1207;
+    color: rgba(255,248,239,.82);
+    padding: 72px 0 24px;
+  }
+
+  .mct-footer-container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .mct-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .8fr 1fr 1fr;
+    gap: 42px;
+  }
+
+  .mct-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 800;
+  }
+
+  .mct-footer-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mct-footer-tagline,
+  .mct-footer-contact p {
+    color: rgba(255,248,239,.68);
+    line-height: 1.75;
+    font-size: 13px;
+  }
+
+  .mct-footer-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .mct-footer-social a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,248,239,.18);
+    font-size: 11px;
+  }
+
+  .mct-footer h4 {
+    margin: 4px 0 18px;
+    color: #ffc06d;
+    font-family: "Montserrat";
+    font-size: 13px;
+  }
+
+  .mct-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .mct-footer-bottom {
+    margin-top: 58px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,248,239,.10);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255,248,239,.54);
+  }
+
+  .reveal {
+    animation: riseIn .8s ease both;
+  }
+
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 980px) {
+    .premium-split,
+    .premium-split.reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .premium-split.reverse .premium-copy {
+      order: 2;
+    }
+
+    .premium-split.reverse .premium-photo {
+      order: 1;
+    }
+
+    .premium-feature-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mct-footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .inner-hero {
+      min-height: 560px;
+      padding-inline: 22px;
+      padding-bottom: 64px;
+    }
+
+    .inner-hero-content::before {
+      display: none;
+    }
+
+    .premium-section {
+      padding: 70px 0;
+    }
+
+    .premium-copy {
+      padding: 24px 20px;
+    }
+
+    .premium-photo,
+    .premium-photo.wide {
+      min-height: 340px;
+      border-radius: 26px;
+      transform: none !important;
+    }
+
+    .premium-feature-grid,
+    .mct-footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mct-footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>
+  </head>
+  <body class="premium-page about-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="mct-header premium-header">
+      <a class="mct-brand" href="index.html" aria-label="Morocco Culture Tours home">
+        <img src="assets/images/logo.png" alt="Morocco Culture Tours Logo" width="64" height="64" />
+        <span class="mct-site-name"><span class="main-name">Morocco Culture Tours</span><span class="sub-name">Authentic Moroccan Experiences</span></span>
+      </a>
+      <button class="mct-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+      <nav aria-label="Primary navigation">
+        <ul class="mct-nav" id="mainNav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="contact.html" class="mct-contact-btn">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="inner-hero about-inner-hero" aria-labelledby="about-title">
+        <img src="assets/images/about-hero.jpeg" width="2048" height="1536" alt="Kasbah and palm trees in Morocco" />
+        <div class="inner-hero-overlay"></div>
+        <div class="inner-hero-content reveal">
+          <p class="eyebrow">About us</p>
+          
+        </div>
+      </section>
+
+      <section class="premium-section">
+        <div class="lux-container premium-split">
+          <figure class="premium-photo reveal">
+            <img src="assets/images/about-hero.jpeg" width="2048" height="1536" alt="Morocco culture tour group" />
+          </figure>
+          <div class="premium-copy reveal">
+            <p class="eyebrow">Who We Are</p>
+            <h2>Desert Culture Tours</h2>
+            <p>Welcome to <strong>Desert Culture Tours</strong>, your trusted local partner for authentic travel experiences across Morocco.</p>
+            <p>We are a passionate team of travel experts, guides, and cultural storytellers dedicated to showcasing the true beauty and spirit of Morocco. From the bustling streets of Marrakech to the peaceful dunes of Merzouga, we create journeys that go beyond sightseeing &mdash; experiences that stay with you for a lifetime.</p>
+            <a class="lux-button compact" href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="premium-section premium-story">
+        <div class="lux-container premium-split reverse">
+          <div class="premium-copy reveal">
+            <p class="eyebrow">Our Story</p>
+            <h2>Discover our story</h2>
+            <p>Desert Culture Tours was born from a deep love for Morocco &mdash; its landscapes, traditions, and people.</p>
+            <p>After years of guiding travelers and exploring every corner of the country, we realized that many visitors were missing the real Morocco &mdash; the hidden gems, the local connections, and the authentic moments.</p>
+            <p>That&rsquo;s why we created Desert Culture Tours: to offer meaningful journeys that connect travelers with the heart of Moroccan culture.</p>
+            <p>Whether you&rsquo;re looking for adventure, relaxation, or cultural discovery, we take care of every detail to make your journey seamless and memorable.</p>
+            <a class="lux-button compact" href="programs.html">Book our programs</a>
+          </div>
+          <figure class="premium-photo wide reveal">
+            <img src="assets/images/about-story.jpeg" width="2048" height="1536" alt="Moroccan camel caravan in the desert" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="premium-section">
+        <div class="lux-container">
+          <div class="lux-section-head reveal">
+            <p class="eyebrow">Why choose us</p>
+            <h2>What Makes us Different</h2>
+          </div>
+          <div class="premium-feature-grid">
+            <article class="premium-feature-card reveal"><img src="assets/images/icon-map.png" alt="" /><h3>Local Expertise</h3><p>We are based in Morocco and know the country inside out.</p></article>
+            <article class="premium-feature-card reveal"><img src="assets/images/icon-authentic.png" alt="" /><h3>Authentic Experiences</h3><p>We take you beyond tourist routes to discover the real Morocco.</p></article>
+            <article class="premium-feature-card reveal"><img src="assets/images/icon-tailor.png" alt="" /><h3>Tailor-Made Tours</h3><p>Every trip is customized to fit your needs and travel style.</p></article>
+            <article class="premium-feature-card reveal"><img src="assets/images/icon-trust.png" alt="" /><h3>Trusted &amp; Reliable</h3><p>We focus on quality service, attention to detail, and customer satisfaction.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="premium-band" aria-labelledby="book-title">
+        <img src="assets/images/program-zagora.jpg" width="1884" height="850" alt="Sahara dune landscape" />
+        <div class="premium-band-content reveal">
+          <p class="eyebrow">Book</p>
+          <h2 id="book-title">Let us show you the real Morocco.</h2>
+          <p>Contact us today and start planning your journey with Desert Culture Tours.</p>
+          <a class="lux-button secondary light" href="contact.html">Book your experience</a>
+        </div>
+      </section>
+
+      <section class="premium-section">
+        <div class="lux-container premium-split">
+          <div class="premium-copy reveal">
+            <p class="eyebrow">Our Mission</p>
+            <h2>Authentic, personalized, and unforgettable travel</h2>
+            <p>Our mission is simple:</p>
+            <p><strong>To provide authentic, personalized, and unforgettable travel experiences in Morocco.</strong></p>
+            <ul class="lux-experience-list">
+              <li><span></span>Share the richness of Moroccan culture</li>
+              <li><span></span>Support local communities</li>
+              <li><span></span>Offer high-quality, comfortable, and safe travel</li>
+            </ul>
+          </div>
+          <figure class="premium-photo reveal">
+            <img src="assets/images/about-mission.jpeg" width="2048" height="1536" alt="Travelers walking through Sahara dunes" />
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mct-footer premium-footer">
+      <div class="mct-footer-container">
+        <div class="mct-footer-grid">
+          <div class="mct-footer-brand">
+            <div class="mct-footer-logo">
+              <img src="assets/images/logo.png" alt="Morocco Culture Tours Logo" />
+              <span class="site-name">Morocco Culture Tours</span>
+            </div>
+            <div class="mct-footer-tagline">
+              Authentic journeys through deserts, mountains, and ancient cities &mdash; crafted by local experts.
+              Discover the soul of Morocco with us.
+            </div>
+            <div class="mct-footer-social">
+              <span aria-label="Facebook">F</span>
+              <span aria-label="Instagram">I</span>
+              <span aria-label="Twitter">T</span>
+              <span aria-label="TripAdvisor">*</span>
+            </div>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul class="mct-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Our Programs</h4>
+            <ul class="mct-footer-links">
+              <li><a href="programs.html">Sahara Desert Adventures</a></li>
+              <li><a href="programs.html">Atlas Mountains Escapes</a></li>
+              <li><a href="programs.html">Imperial Cities Tours</a></li>
+              <li><a href="programs.html">Coastal Getaways</a></li>
+            </ul>
+          </div>
+          <div class="mct-footer-contact">
+            <h4>Contact Us</h4>
+            <p>Marrakech, Morocco</p>
+            <p>+212(0) 6 64 35 03 04</p>
+            <p>info@moroccoculturetours.com</p>
+          </div>
+          <nav aria-label="Information">
+            <h3>Information</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="cancellation-policy.html">Cancellation Policy</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="mct-footer-bottom">
+          <div>&copy; 2025 Morocco Culture Tours. All rights reserved.</div>
+          <div class="mct-footer-bottom-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="cancellation-policy.html">Cancellation Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
+
+
+
