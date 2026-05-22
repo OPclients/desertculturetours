@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://desertculturetours.dreamhosters.com/sitemap.xml

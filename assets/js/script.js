@@ -1,3 +1,123 @@
+const businessInfo = {
+  name: "Morocco Culture Tours",
+  tagline: "Experiences marocaines authentiques",
+  description:
+    "Voyages authentiques entre deserts, montagnes et villes anciennes, crees par des experts locaux.",
+  address: "Marrakech, Maroc",
+  phone: "+212(0) 6 64 35 03 04",
+  email: "info@moroccoculturetours.com",
+};
+
+const mainNavItems = [
+  { href: "index.html", label: "Accueil", page: "index.html" },
+  { href: "about.html", label: "A propos", page: "about.html" },
+  { href: "services.html", label: "Services", page: "services.html" },
+  { href: "contact.html", label: "Contact", page: "contact.html", className: "mct-contact-btn" },
+];
+
+const legalNavItems = [
+  { href: "privacy-policy.html", label: "Privacy Policy" },
+  { href: "terms.html", label: "Terms &amp; Conditions" },
+  { href: "cancellation-policy.html", label: "Cancellation Policy" },
+];
+
+const getCurrentPage = () => {
+  const page = window.location.pathname.split("/").pop();
+  return page || "index.html";
+};
+
+const renderSiteHeader = () => {
+  const target = document.getElementById("site-header");
+  if (!target) return;
+
+  const currentPage = getCurrentPage();
+  const isPremiumLayout =
+    document.body.classList.contains("premium-home") || document.body.classList.contains("premium-page");
+  target.innerHTML = `
+    <header class="mct-header${isPremiumLayout ? " premium-header" : ""}">
+      <a class="mct-brand" href="index.html" aria-label="Accueil ${businessInfo.name}">
+        <img src="assets/img/logo.png" alt="Logo ${businessInfo.name}" width="64" height="64" />
+        <span class="mct-site-name">
+          <span class="main-name">${businessInfo.name}</span>
+          <span class="sub-name">${businessInfo.tagline}</span>
+        </span>
+      </a>
+      <button class="mct-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Navigation principale">
+        <ul class="mct-nav" id="mainNav">
+          ${mainNavItems
+            .map((item) => {
+              const isActive = item.page === currentPage;
+              const linkClass = item.className ? ` class="${item.className}"` : "";
+              return `<li${isActive ? ' class="active"' : ""}><a href="${item.href}"${linkClass}>${item.label}</a></li>`;
+            })
+            .join("")}
+        </ul>
+      </nav>
+    </header>
+  `;
+};
+
+const renderSiteFooter = () => {
+  const target = document.getElementById("site-footer");
+  if (!target) return;
+
+  const isPremiumLayout =
+    document.body.classList.contains("premium-home") || document.body.classList.contains("premium-page");
+  target.innerHTML = `
+    <footer class="mct-footer${isPremiumLayout ? " premium-footer" : ""}">
+      <div class="mct-footer-container">
+        <div class="mct-footer-grid">
+          <div class="mct-footer-brand">
+            <div class="mct-footer-logo">
+              <img src="assets/img/logo.png" alt="Logo ${businessInfo.name}" />
+              <span class="site-name">${businessInfo.name}</span>
+            </div>
+            <div class="mct-footer-tagline">${businessInfo.description}</div>
+          </div>
+          <div>
+            <h4>Navigation</h4>
+            <ul class="mct-footer-links">
+              ${mainNavItems.map((item) => `<li><a href="${item.href}">${item.label}</a></li>`).join("")}
+            </ul>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <ul class="mct-footer-links">
+              <li><a href="services.html">Aventures dans le Sahara</a></li>
+              <li><a href="services.html">Escapades dans l'Atlas</a></li>
+              <li><a href="services.html">Circuits des villes imperiales</a></li>
+              <li><a href="services.html">Sejours sur la cote</a></li>
+            </ul>
+          </div>
+          <div class="mct-footer-contact">
+            <h4>Contact</h4>
+            <p>${businessInfo.address}</p>
+            <p>${businessInfo.phone}</p>
+            <p>${businessInfo.email}</p>
+          </div>
+          <nav aria-label="Informations legales">
+            <h3>Informations</h3>
+            ${legalNavItems.map((item) => `<a href="${item.href}">${item.label}</a>`).join("")}
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="mct-footer-bottom">
+          <div>&copy; 2026 ${businessInfo.name}. Tous droits reserves.</div>
+          <div class="mct-footer-bottom-links">
+            ${legalNavItems.map((item) => `<a href="${item.href}">${item.label}</a>`).join("")}
+          </div>
+        </div>
+      </div>
+    </footer>
+  `;
+};
+
+renderSiteHeader();
+renderSiteFooter();
+
 const toggle = document.querySelector(".mct-toggle");
 const nav = document.querySelector(".mct-nav");
 
@@ -5,14 +125,14 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!open));
-    toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+    toggle.setAttribute("aria-label", open ? "Ouvrir le menu" : "Fermer le menu");
     nav.classList.toggle("show-mobile", !open);
   });
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open menu");
+      toggle.setAttribute("aria-label", "Ouvrir le menu");
       nav.classList.remove("show-mobile");
     });
   });

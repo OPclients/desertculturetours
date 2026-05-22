@@ -223,7 +223,7 @@ a {
   bottom: 5%;
   width: min(33vw, 440px);
   aspect-ratio: 0.55;
-  background: url("../images/morocco-detail.png") center bottom / contain no-repeat;
+  background: url("../img/morocco-detail.png") center bottom / contain no-repeat;
   z-index: 2;
 }
 
@@ -327,7 +327,7 @@ a {
 
 .programs-hero {
   min-height: 900px;
-  background-image: url("../images/clone-programs-hero.png");
+  background-image: url("../img/clone-programs-hero.png");
   background-position: center top;
 }
 
@@ -360,7 +360,7 @@ a {
 }
 
 .about-hero {
-  background-image: url("../images/clone-about-hero.png");
+  background-image: url("../img/clone-about-hero.png");
   background-position: center top;
 }
 
@@ -655,7 +655,7 @@ body:has(.about-hero) .split-section::after {
   width: 48%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-image: url("../images/program-zagora.jpg");
+  background-image: url("../img/program-zagora.jpg");
 }
 
 .experience-image::after {
@@ -664,7 +664,7 @@ body:has(.about-hero) .split-section::after {
   width: 36%;
   height: 300px;
   border-radius: 12px 12px 90px 12px;
-  background-image: url("../images/about-hero.jpeg");
+  background-image: url("../img/about-hero.jpeg");
 }
 
 .check-list {
@@ -698,12 +698,12 @@ body:has(.about-hero) .split-section::after {
   position: relative;
   min-height: 760px;
   overflow: hidden;
-  background: #fff url("../images/clone-desert-band.png") center bottom / cover no-repeat;
+  background: #fff url("../img/clone-desert-band.png") center bottom / cover no-repeat;
 }
 
 .about-page .desert-cta {
   min-height: 850px;
-  background-image: url("../images/clone-about-book-band.png");
+  background-image: url("../img/clone-about-book-band.png");
   background-position: center top;
 }
 
@@ -1014,7 +1014,7 @@ body:has(.about-hero) .split-section::after {
   min-height: 690px;
   overflow: hidden;
   border-radius: 7px;
-  background: #123 url("../images/clone-contact-desert.png") center top / cover no-repeat;
+  background: #123 url("../img/clone-contact-desert.png") center top / cover no-repeat;
 }
 
 .contact-visual::before {
